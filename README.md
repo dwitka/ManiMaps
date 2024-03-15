@@ -7,4 +7,4 @@ it to google's servers. The app receives a json response which is refined and st
 through a CLI.
 
 # Output
-![Screenshot of the output using a CLI]/(https://github.com/dwitka/ManiMaps/tree/main/output.png)
+![Screenshot of the output using a CLI](https://github.com/dwitka/ManiMaps/tree/main/output.png)
