@@ -9,7 +9,7 @@ through a CLI.
 Future versions will incorprate a TSP algorithm to calculate an optimal route.
 
 The screenshot below shows the output of running the app through a CLI. 5 different addresses are used this produces 10 
-results. The output shows two addresses and the distance between them in meters, per line.
+results. For every line the output shows two addresses and the distance between them in meters.
 
 ### Output
 ![Screenshot of the output using a CLI](output.png)
