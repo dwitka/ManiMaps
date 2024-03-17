@@ -46,10 +46,28 @@ def refine_data(response):
 def structure_data(data):
     """(List(Dictionaries)-->List(Lists))
     Structure the data."""
-    struc_list = []
+    struct_list = []
     for dictionary in data:
-        struc_list.append([ADDRESS_LIST[dictionary['originIndex']], ADDRESS_LIST[dictionary['destinationIndex']], dictionary['distanceMeters']])
-    return struc_list
+        struct_list.append([ADDRESS_LIST[dictionary['originIndex']].split(',')[0], 
+        ADDRESS_LIST[dictionary['destinationIndex']].split(',')[0], 
+        dictionary['distanceMeters']])
+    return struct_list
+
+def distance_dictionary(struct_list):
+    """(List(Lists)-->Dictionary)
+    Structure the data in a dictionary for quick look-up of distance between cities.
+    {'ROSE WATER ESTATES':  [{'ACCESS STORAGE': 5041, 'WALMART': 150331, 'DOWN RIVER POOLS': 141913}]}"""
+    points = {}
+    for x in struct_list:
+        if not x[0] in points.keys():
+            points[x[0]] = [{x[1]: x[2]}]
+        else:
+            points[x[0]][0][x[1]] = x[2]     
+        if not x[1] in points.keys():
+            points[x[1]] = [{x[0]: x[2]}]
+        else:
+            points[x[1]][0][x[0]] = x[2]
+    return points
 
 def get_coordinates(struct_list):
     """(List-->)
@@ -57,13 +75,21 @@ def get_coordinates(struct_list):
     calculate the coordinates for each city. First coordinates are (0,0) for first city and (0,y)
     second city of your choice. y = distance between first and second cities.
     struct_list=[[city1,city2,distance], [city1,..],..]"""
-    
+    first_city = struct_list[0][0]
+    second_city = struct_list[0][1]
+    y = struct_list[0][2]
+    points = {first_city: (0,0), second_city: (0,y)}
+    for item in struct_list[2:]:
+        get_points(first_city, second_city, item)
     return None
 
 if __name__ == "__main__":
     data = structure_data(refine_data(get_response(create_request_string(read_addresses()))))
     for every_list in data:
         print(every_list)
+    dictionary = points_dictionary(data)
+    for x in dictionary:
+        print(x + ': ', dictionary[x])
 
             
 
