@@ -48,9 +48,7 @@ def structure_data(data):
     Structure the data."""
     struc_list = []
     for dictionary in data:
-        struc_list.append([ADDRESS_LIST[dictionary['originIndex']], 
-        ADDRESS_LIST[dictionary['destinationIndex']],
-        dictionary['distanceMeters']])
+        struc_list.append([ADDRESS_LIST[dictionary['originIndex']], ADDRESS_LIST[dictionary['destinationIndex']], dictionary['distanceMeters']])
     return struc_list
 
 def get_coordinates(struct_list):
