@@ -31,16 +31,24 @@ $ git commit .
 ```
 $ git clone https://github.com/dwitka/ManiMaps.git
 ```
-3. Add your API_Key to the code:
+3. Confirm that there is a new folder named ManiMaps in your current directory.
+    - Run the command:
+    - ```$ ls```
+4. Change into the ManiMaps folder.
+    - Run the command:
+    - ```$ cd ManiMaps```
+5. Add your API_Key to the code:
    - Open the file app.py with a text editor.
-   - Above the data line ADDRESSES = [] add the line: (Make sure your api key is in quotes.) ...and save.
-```
-API_KEY = 'my api key'
-```
-4. Run the app.
+   - Above the data line:
+   - ```ADDRESSES = []```
+   - Add the line:
+   - ```API_KEY = 'my api key'```
+   - Make sure your api key is in quotes.
+   - Save the file.
+6. Run the app.
     - In terminal run command:
 ```
 $ python3 app.py
 ```
-5. You should see the ouput:
+7. You should see the ouput:
 ![Screenshot of the output using a CLI](output.png)
