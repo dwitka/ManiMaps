@@ -4,7 +4,6 @@ import math
 from sympy import solve, Symbol, simplify
 from sympy.abc import x,y
 
-
 ADDRESS_LIST=[]
 distances = {}
 
@@ -92,6 +91,9 @@ def get_coordinates(struct_list):
     return points_dictionary
 
 def get_points(city1, city2, city3):
+    """(String,String,String-->Tuple)
+    Three locations are entered. For two coordinates are known and for the last location
+    the coordinates are calculated. Return a tuple of coordinates."""
     d1 = distances[city3][0][city1]
     d2 = distances[city2][0][city1]
     d3 = distances[city3][0][city2]
@@ -105,7 +107,6 @@ def get_points(city1, city2, city3):
     value2 = value2.replace("sqrt", "math.sqrt")
     
     solutions = ( eval(value1)/1000, eval(value2)/1000 )
-    print(solutions)
     return solutions
 
 
@@ -113,8 +114,6 @@ if __name__ == "__main__":
     data = structure_data(refine_data(get_response(create_request_string(read_addresses()))))
     distance_dictionary(data)
     print(get_coordinates(data))
-    ADDRESS_LIST=[]
-    distances = {}
 
             
 
