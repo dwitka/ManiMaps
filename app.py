@@ -2,7 +2,6 @@ import requests
 import itertools
 
 ADDRESS_LIST=[]
-distances = {}
 
 def read_addresses(a_file='ADDRESSES'):
     """(File-->List)
