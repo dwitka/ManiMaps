@@ -19,10 +19,14 @@ def create_request_string(address):
     return url + address + api_key
 
 def get_response(request_string):
+    """(String-->Response)
+    Get a json reponse from google's servers."""
     response = requests.post(request_string)
     return response.json()
 
 def make_geocode_list(lines):
+    """(List-->List)
+    Make a list of longitude and latitude coordinates."""
     geocode_list = []
     for line in lines:
         line = line.strip('\n')
@@ -33,6 +37,8 @@ def make_geocode_list(lines):
     return geocode_list
 
 def get_coordinates(response):
+    """(Response-->Dictionary)
+    Retrieve geocodes from json response.'"""
     geocodes = response['results'][0]['geometry']['location']
     return geocodes
 
