@@ -2,6 +2,8 @@ import math
 from sympy import solve, Symbol, simplify
 from sympy.abc import x,y
 
+distances = {}
+
 def distance_dictionary(struct_list):
     """(List(Lists)-->Dictionary)
     Structure the data in a dictionary for quick look-up of distance between cities.
