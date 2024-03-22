@@ -33,8 +33,12 @@ def make_geocode_list(lines):
         request_string = create_request_string(line)
         response = get_response(request_string)
         coordinates = get_coordinates(response)
+        coordinates = get_list_coordinates(coordinates)
         geocode_list.append(coordinates)
     return geocode_list
+
+def get_list_coordinates(coordinates):
+    return [coordinates['lat'], coordinates['lng']]   
 
 def get_coordinates(response):
     """(Response-->Dictionary)
@@ -43,4 +47,11 @@ def get_coordinates(response):
     return geocodes
 
 if __name__ == "__main__":
-    print(make_geocode_list(read_addresses()))
+    geo_list = make_geocode_list(read_addresses())
+    print(geo_list)
+
+
+
+
+
+
