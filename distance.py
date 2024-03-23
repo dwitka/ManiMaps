@@ -1,9 +1,9 @@
 """
-**app** module extracts distances between addresses.
+**distance** module extracts distances between addresses.
 
-**app** reads a standard text file where each line consists of an 
+**distance** reads a standard text file where each line consists of an 
 address, it builds an http request and sends it to google's 
-servers. The **app** receives a json response which is then refined 
+servers. The **distance** receives a json response which is then refined 
 and structured.
 
 Output returns list items that contain 2 addreses and the distance between them in meters:
