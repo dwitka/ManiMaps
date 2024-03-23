@@ -1,15 +1,21 @@
 """
-**app** module extracts distances between addresses. It reads 
-a standard text file where each line consists of an address, it 
-builds an http request and sends it to google's servers. The app 
-receives a json response which is then refined and structured.
+**app** module extracts distances between addresses.
+
+**app** reads a standard text file where each line consists of an 
+address, it builds an http request and sends it to google's 
+servers. The **app** receives a json response which is then refined 
+and structured.
+
+Output returns list items that contain 2 addreses and the distance between them in meters:
+
+    [[address, address, distance],[address, address, distance],...]
 """
 
 import requests
 import itertools
 
 ADDRESS_LIST=[]
-# hi
+
 def read_addresses(a_file='ADDRESSES'):
     """(File-->List)
     Read addresses from text file."""
