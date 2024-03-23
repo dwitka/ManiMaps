@@ -4,14 +4,14 @@
 ManiMaps is currently a working python application that uses the Google Maps API to extract data. Access to the app is gained 
 through a CLI.
 
-The ***app.py*** module extracts distances between addresses. It reads a standard text file where each line consists of an address, 
+The ***distance.py*** module extracts distances between addresses. It reads a standard text file where each line consists of an address, 
 it builds an http request and sends it to google's servers. The app receives a json response which is then refined and structured.
 
 The ***geocode.py*** module returns a list of the longitude/latitude coordinates for addresses given.
 
 Future versions will incorprate a TSP algorithm to calculate an optimal route.
 
-The screenshot below shows the output of running ***app.py*** through a CLI. 5 different addresses are used, this produces 10 
+The screenshot below shows the output of running ***distance.py*** through a CLI. 5 different addresses are used, this produces 10 
 results. For every line the output shows two addresses and the distance between them in meters.
 
 ### Output
@@ -51,7 +51,7 @@ $ git clone https://github.com/dwitka/ManiMaps.git
 6. Run the app.
     - In terminal run command:
 ```
-$ python3 app.py
+$ python3 distance.py
 ```
 7. You should see the ouput:
 ![Screenshot of the output using a CLI](output.png)
