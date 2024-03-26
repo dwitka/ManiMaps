@@ -68,9 +68,15 @@ def get_coordinates(response):
     geocodes = response['results'][0]['geometry']['location']
     return geocodes
 
+def run_module():
+    """(None-->List of coordinates)
+    Run the module from within another module or from the python shell.
+    """
+    geocode_list = make_geocode_list(read_addresses())
+    return geocode_list
+
 if __name__ == "__main__":
-    geo_list = make_geocode_list(read_addresses())
-    print(geo_list)
+    print(run_module())
 
 
 
