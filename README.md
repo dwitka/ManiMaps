@@ -13,13 +13,16 @@ google's servers. The app receives a json response which is then refined and str
 
 ***solver.py*** runs a two_opt tsp algorithm on a cartesian plane and retrives an optimal path.
 
-**distance.py**
-
-The screenshot below shows the output of running ***distance.py*** through a Command Line Interface.
-5 different addresses are used, this produces 10 results. For every line the output shows two addresses 
-and the distance between them in meters.
+### Output
+The screenshot below shows the output of running ***solver.py*** through a CLI.
+The module runs a two_opt tsp algorithm and using pyplot spits out a window with
+the longitude/latitude points connected by an optimal route.
+![Screenshot of the output using a CLI](figure_1.png)
 
 ### Output
+The screenshot below shows the output of running ***solver.py*** through a Command Line Interface.
+5 different addresses are used, this produces 10 results. For every line the output shows two addresses 
+and the distance between them in meters.
 ![Screenshot of the output using a CLI](output.png)
 
 ### How To Run The App
