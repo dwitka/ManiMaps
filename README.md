@@ -3,7 +3,7 @@
 ### Project Description:
 ManiMaps is currently a working python application that uses the Google Maps API to extract data. Access to the app is gained 
 through a CLI. It reads a standard text file where each line consists of an address, it builds an http request and sends it to 
-google's servers. The app receives a json response which is then refined and structured.
+google's servers. The app receives a json response which is then processed.
 
 ***distance.py*** module extracts distances between addresses.
 
@@ -15,7 +15,7 @@ google's servers. The app receives a json response which is then refined and str
 
 ### Output:
 The screenshot below shows the output of running ***solver.py*** through a CLI.
-The module runs a two_opt tsp algorithm and using pyplot spits out a window with
+The module runs a two_opt tsp algorithm and using pyplot displays a window with
 the longitude/latitude points connected by an optimal route.
 ![Screenshot of the output using a CLI](Figure_1.png)
 
