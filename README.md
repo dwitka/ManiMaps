@@ -11,7 +11,7 @@ The ***geocode.py*** module returns a list of the longitude/latitude coordinates
 
 The ***durations.py*** module returns an asymmetric durations matrix.
 
-Future versions will incorprate a TSP algorithm to calculate an optimal route.
+***solver.py*** runs a two_opt tsp algorithm on a cartesian plane and retrives an optimal path. 
 
 The screenshot below shows the output of running ***distance.py*** through a CLI. 5 different addresses are used, this produces 10 
 results. For every line the output shows two addresses and the distance between them in meters.
