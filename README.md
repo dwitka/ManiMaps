@@ -17,7 +17,7 @@ google's servers. The app receives a json response which is then refined and str
 The screenshot below shows the output of running ***solver.py*** through a CLI.
 The module runs a two_opt tsp algorithm and using pyplot spits out a window with
 the longitude/latitude points connected by an optimal route.
-![Screenshot of the output using a CLI](figure_1.png)
+![Screenshot of the output using a CLI](Figure_1.png)
 
 ### Output
 The screenshot below shows the output of running ***solver.py*** through a Command Line Interface.
