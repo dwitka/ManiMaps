@@ -21,13 +21,13 @@ google's servers. The app receives a json response which is then processed.
 The screenshot below shows the output of running ***solver.py*** through a CLI.
 The module runs a two_opt tsp algorithm and using pyplot displays a window with
 the longitude/latitude points connected by an optimal route.
-![Screenshot of the output using a CLI](Figure_1.png)
+![Screenshot of the output using a CLI](./images/Figure_1.png)
 
 ### Output:
 The screenshot below shows the output of running ***distance.py*** through a Command Line Interface.
 5 different addresses are used, this produces 10 results. For every line the output shows two addresses 
 and the distance between them in meters.
-![Screenshot of the output using a CLI](output.png)
+![Screenshot of the output using a CLI](./images/output.png)
 
 ### How To Run The App:
 > [!IMPORTANT]
@@ -73,7 +73,7 @@ $ python solver.py
 ```
 10. You should see the ouput:
 
-![Screenshot of the output using a CLI](Figure_1.png)
+![Screenshot of the output using a CLI](./images/Figure_1.png)
 
 11. Run dislpay.py to output an html file that diplays a route on a map:
      - In terminal run:
@@ -83,4 +83,4 @@ $ python display.py
 
 12. Check your directory for the file ontario.html and click on it.
 
-![Screenshot of the output using a CLI](ontario.png)
+![Screenshot of the output using a CLI](./images/ontario.png)
