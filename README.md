@@ -20,7 +20,7 @@ the longitude/latitude points connected by an optimal route.
 ![Screenshot of the output using a CLI](Figure_1.png)
 
 ### Output:
-The screenshot below shows the output of running ***solver.py*** through a Command Line Interface.
+The screenshot below shows the output of running ***distance.py*** through a Command Line Interface.
 5 different addresses are used, this produces 10 results. For every line the output shows two addresses 
 and the distance between them in meters.
 ![Screenshot of the output using a CLI](output.png)
@@ -36,7 +36,7 @@ and the distance between them in meters.
     - Make sure git is installed.
     - In terminal run command:
 ```
-$ git commit .
+$ git init .
 ```
 2. Clone the repository.
     - In terminal run command:
