@@ -13,6 +13,10 @@ google's servers. The app receives a json response which is then processed.
 
 ***solver.py*** runs a two_opt tsp algorithm on a cartesian plane and retrives an optimal path.
 
+***display.py*** uses Folium to generate an html file with map and route.
+
+***directions.py*** currently returns directions between two locations. (future versions will have n locations)
+
 ### Output:
 The screenshot below shows the output of running ***solver.py*** through a CLI.
 The module runs a two_opt tsp algorithm and using pyplot displays a window with
@@ -70,3 +74,13 @@ $ python solver.py
 10. You should see the ouput:
 
 ![Screenshot of the output using a CLI](Figure_1.png)
+
+11. Run dislpay.py to output an html file that diplays a route on a map:
+     - In terminal run:
+```
+$ python display.py
+```
+
+12. Check your directory for the file ontario.html and click on it.
+
+![Screenshot of the output using a CLI](ontario.png)
