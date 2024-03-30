@@ -51,23 +51,22 @@ $ git clone https://github.com/dwitka/ManiMaps.git
     - ```$ cd ManiMaps```
 5. Create a virtual environment.
     - Run the command:
-    - ```$ python -m venv venv```
+    - ```$ python3 -m venv venv```
 6. Get your virtual environment running.
     - ```$ source venv/bin/activate```
 7. Install your dependencies.
-    - ```$ pip install requirements.txt```
-7. Add your API_Key to the code:
+    - ```$ pip install -r requirements.txt```
+8. Add your API_KEY to the code:
     - Open the file geocode.py with a text editor.
-    - Above the data line:
-    - ```ADDRESSES = []```
     - Add the line:
     - ```API_KEY = 'my api key'```
     - Make sure your api key is in quotes.
     - Save the file.
-6. Run the app.
+9. Run the app.
     - In terminal run command:
 ```
 $ python solver.py
 ```
-7. You should see the ouput:
+10. You should see the ouput:
+
 ![Screenshot of the output using a CLI](Figure_1.png)
