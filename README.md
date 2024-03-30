@@ -5,16 +5,19 @@ ManiMaps is currently a working python application that uses the Google Maps API
 through a CLI. It reads a standard text file where each line consists of an address, it builds an http request and sends it to 
 google's servers. The app receives a json response which is then refined and structured.
 
-The ***distance.py*** module extracts distances between addresses.
+***distance.py*** module extracts distances between addresses.
 
-The ***geocode.py*** module returns a list of the longitude/latitude coordinates for addresses given.
+***geocode.py*** returns a list of the longitude/latitude coordinates for addresses given.
 
-The ***durations.py*** module returns an asymmetric durations matrix.
+***durations.py*** module returns an asymmetric durations matrix.
 
-***solver.py*** runs a two_opt tsp algorithm on a cartesian plane and retrives an optimal path. 
+***solver.py*** runs a two_opt tsp algorithm on a cartesian plane and retrives an optimal path.
 
-The screenshot below shows the output of running ***distance.py*** through a CLI. 5 different addresses are used, this produces 10 
-results. For every line the output shows two addresses and the distance between them in meters.
+**distance.py**
+
+The screenshot below shows the output of running ***distance.py*** through a Command Line Interface.
+5 different addresses are used, this produces 10 results. For every line the output shows two addresses 
+and the distance between them in meters.
 
 ### Output
 ![Screenshot of the output using a CLI](output.png)
