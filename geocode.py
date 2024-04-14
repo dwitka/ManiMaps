@@ -14,64 +14,49 @@ from the reponse and returns them in a list.
 
 import requests
 
-API_KEY = None
-
-def read_addresses(a_file='ADDRESSES'):
-    """(File-->List)
-    Read addresses from text file.
-    """
+def read_addresses(a_file='./data/ADDRESSES') -> list:
+    """ Read addresses from text file. """
     file1 = open(a_file, 'r')
     lines = file1.readlines()
     file1.close()
     return lines
 
-def create_request_string(address):
-    """(List-->String)
-    Create a cURL request string
-    """
+def create_request_string(address: list) -> str:
+    """ Create a cURL request string """
     url = 'https://maps.googleapis.com/maps/api/geocode/json?'
     address = 'address=' + address.replace(" ", "+")
     api_key = '&key=' + API_KEY
     return url + address + api_key
 
-def get_response(request_string):
-    """(String-->Response)
-    Get a json reponse from google's servers.
-    """
+def get_response(request_string: str) -> "response":
+    """ Get a json response from google's servers. """
     response = requests.post(request_string)
     return response.json()
 
-def make_geocode_list(lines):
-    """(List-->List)
-    Make a list of longitude and latitude coordinates.
-    """
-    geocode_list = []
-    for line in lines:
-        line = line.strip('\n')
-        request_string = create_request_string(line)
-        response = get_response(request_string)
-        coordinates = get_coordinates(response)
-        coordinates = get_list_coordinates(coordinates)
-        geocode_list.append(coordinates)
-    return geocode_list
+def make_geocode_list(lines: list) -> list:
+    """ Make a list of longitude and latitude coordinates. """
+    return [ subroutine(line) for line in lines ]
 
-def get_list_coordinates(coordinates):
-    """(Tuple-->List)
-    Convert tuple to a list.
-    """
+def subroutine(line: str) -> list:
+    """ subroutine for make_geocode_list """
+    line.strip('\n')
+    request_string = create_request_string(line)
+    response = get_response(request_string)
+    coordinates = get_coordinates(response)
+    coordinates = get_list_coordinates(coordinates)
+    return coordinates
+
+def get_list_coordinates(coordinates: tuple) -> list:
+    """ Convert tuple to a list. """
     return [coordinates['lat'], coordinates['lng']]   
 
-def get_coordinates(response):
-    """(Response-->Dictionary)
-    Retrieve geocodes from json response.
-    """
+def get_coordinates(response: "response") -> dict:
+    """ Retrieve geocodes from json response. """
     geocodes = response['results'][0]['geometry']['location']
     return geocodes
 
-def run_module():
-    """(None-->List of coordinates)
-    Run the module from within another module or from the python shell.
-    """
+def run_module() -> list:
+    """ Run the module from within another module or from the python shell. """
     geocode_list = make_geocode_list(read_addresses())
     return geocode_list
 
