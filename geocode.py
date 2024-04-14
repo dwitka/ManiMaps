@@ -7,12 +7,13 @@ of an address, it builds an http request and sends it to google's
 servers.
 
 make_geocode_list parses out longitude and latitude coordinates 
-from the reponse and returns them in a list.
+from the response and returns them in a list.
 
     [[longitude, latitude],[longitude, latitude],...]
 """
 
 import requests
+
 
 def read_addresses(a_file='./data/ADDRESSES') -> list:
     """ Read addresses from text file. """
@@ -21,6 +22,7 @@ def read_addresses(a_file='./data/ADDRESSES') -> list:
     file1.close()
     return lines
 
+
 def create_request_string(address: list) -> str:
     """ Create a cURL request string """
     url = 'https://maps.googleapis.com/maps/api/geocode/json?'
@@ -28,17 +30,15 @@ def create_request_string(address: list) -> str:
     api_key = '&key=' + API_KEY
     return url + address + api_key
 
+
 def get_response(request_string: str) -> "response":
     """ Get a json response from google's servers. """
     response = requests.post(request_string)
     return response.json()
 
-def make_geocode_list(lines: list) -> list:
-    """ Make a list of longitude and latitude coordinates. """
-    return [ subroutine(line) for line in lines ]
 
-def subroutine(line: str) -> list:
-    """ subroutine for make_geocode_list """
+def geocodes(line: str) -> list:
+    """ longitude and latitude set """
     line.strip('\n')
     request_string = create_request_string(line)
     response = get_response(request_string)
@@ -46,19 +46,22 @@ def subroutine(line: str) -> list:
     coordinates = get_list_coordinates(coordinates)
     return coordinates
 
+
 def get_list_coordinates(coordinates: tuple) -> list:
     """ Convert tuple to a list. """
     return [coordinates['lat'], coordinates['lng']]   
+
 
 def get_coordinates(response: "response") -> dict:
     """ Retrieve geocodes from json response. """
     geocodes = response['results'][0]['geometry']['location']
     return geocodes
 
+
 def run_module() -> list:
     """ Run the module from within another module or from the python shell. """
-    geocode_list = make_geocode_list(read_addresses())
-    return geocode_list
+    lines = read_addresses()
+    return [ geocodes(line) for line in lines ]
 
 if __name__ == "__main__":
     print(run_module())
