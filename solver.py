@@ -46,7 +46,7 @@ def graph(route, cities):
     print("Route: " + str(route) + "\n\nDistance: " + str(path_distance(route,cities)))
 
 def run():
-    cities = np.array(geocode.run_module())
+    cities = np.array(geocode.run())
     # Find a good route with 2-opt ("route" gives the order in which to travel to each city by row number.)
     route = two_opt(cities,0.001)
     graph(route, cities)
